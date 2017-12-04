@@ -67,7 +67,7 @@
         <autocomplete>
             <usage>
                 <placeholder><![CDATA[Enter a location]]></placeholder>
-                <countries_as_admin2>BY,DK,ES,GB,TR</countries_as_admin2>
+                <countries_as_admin2>BY,DK,ES,GB,TR,DE</countries_as_admin2>
             </usage>
         </autocomplete>
     </default>

@@ -20,11 +20,11 @@ var AddressAutocomplete = Class.create({
         this.componentForm = {
             street_number: {
                 type: 'short_name',
-                target: this.type + ':street1'
+                target: this.type + ':street2'
             },
             route: {
                 type: 'long_name',
-                target: this.type + ':street2'
+                target: this.type + ':street1'
             },
             locality: {
                 type: 'long_name',
@@ -61,7 +61,12 @@ var AddressAutocomplete = Class.create({
             document.getElementById(this.element.id).placeholder = placeholder;
         }
 
-        this.autocomplete = new google.maps.places.Autocomplete((this.element), { types: ['geocode'] });
+        var options = {
+            types: ['geocode'],
+            componentRestrictions: {country: "de"}
+        };
+
+        this.autocomplete = new google.maps.places.Autocomplete((this.element), options);
 
         google.maps.event.addListener(
             this.autocomplete, 'place_changed', this.fillAddressForm.bind(this)
@@ -143,7 +148,7 @@ var AddressAutocomplete = Class.create({
             address['region'] = this.getFormattedRegion(address);
         }
 
-        address = this.formatStreet(address);
+        //address = this.formatStreet(address);
         return address;
     },
 
