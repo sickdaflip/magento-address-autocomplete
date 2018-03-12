@@ -62,8 +62,7 @@ var AddressAutocomplete = Class.create({
         }
 
         var options = {
-            types: ['geocode'],
-            componentRestrictions: {country: "de"}
+            types: ['geocode']
         };
 
         this.autocomplete = new google.maps.places.Autocomplete((this.element), options);
